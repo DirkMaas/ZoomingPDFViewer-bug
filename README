@@ -1,0 +1,27 @@
+﻿I'm having trouble when zooming out with CATiledLayer in a UIScrollView.  The CATiledLayer holds a pdf, and when contentOffset is within a certain range, when I zoom out, the contentOffset is changed (that's the bug) before the zooming occurs.  The contentOffset seems to be changed in Apple's code.
+
+A tap will cause zoomScale to be changed to 0.5, using animateWithDuration (in zoomOut: in ZoomingPDFViewerViewController.m), thus zooming out.  If the UIScrollView's contentOffset is less than about 2700 or greater than 5900, the zoomScale animation works fine.  If the tap happens when contentOffset is between about 2700 and 5900, the contentOffset will jump (not animated) to about 2700, and then the zoomScale animation will occur, but scrolling will occur at the same time, so that when the animation is done, the contentOffset is where it should be.  But where does the jump come from?
+
+For example, say the contentOffset is 2000 when the screen is tapped: the zoomScale animation works just fine; contentOffset is not changed.
+
+Say the contentOffset is 4000 when the screen is tapped: the contentOffset will jump, without animation, to about 2700, and then zooming and scrolling will begin from that point and occur at the same time.  When the animation is done, it looks as if we zoomed straight back from 4000, so we end up in the right place, but the behavior is wrong.
+
+A note on the UI:
+	⁃	the text can be scrolled vertically in the normal way
+	⁃	the text can be zoomed in and out by pinching in the normal way
+	⁃	a single tap will cause the zoomScale to be set to 0.5; the change is animated
+
+I've noticed that if zoomScale is greater than 0.5, the jump is not so big.  Also, if I use setZoomScale:animated: instead of animateWithDuration, the bug disappears, but I can't use it because I need to chain animations.
+
+To illustrate the problem, I modified the sample app, ZoomingPDFViewer.  The code is on github.
+
+Here is a summary of what I did (the code in github includes these changes):
+	⁃	Downloaded ZoomingPDFViewer from http://developer.apple.com/library/ios/#samplecode/ZoomingPDFViewer/Introduction/Intro.html and opened it in XCode
+	⁃	Changed Build Settings | Architectures | Base SDK to Latest iOS (iOS 4.3)
+	⁃	changed Build Settings | GCC 4.2 - Language | Compile Sources As to Objective-C++
+	⁃	removed TestPage.pdf from the project
+	⁃	added "whoiam 5 24 cropped 3-2.pdf" to the project in its place
+	⁃	added "PDFScrollView *scrollView;" to ZoomingPDFViewerViewController class
+	⁃	changed loadView in ZoomingPDFViewerViewController to initialize scrollView instead of sv
+	⁃	added viewDidLoad, handleTapFrom:recognizer and zoomOut to ZoomingPDFViewerViewController
+	⁃	in PDFScrollview.m commented out scrollViewDidEndZooming:withView:atScale and scrollViewWillBeginZooming:withView: because they do stuff in the image background that distracts from the issue at hand
