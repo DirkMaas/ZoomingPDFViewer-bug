@@ -47,6 +47,7 @@
 #import "PDFScrollView.h"
 
 @implementation ZoomingPDFViewerViewController
+@synthesize scrollView;
 
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -54,13 +55,31 @@
 	[super loadView];
 	
 	// Create our PDFScrollView and add it to the view controller.
-	PDFScrollView *sv = [[PDFScrollView alloc] initWithFrame:[[self view] bounds]];
+	scrollView = [[PDFScrollView alloc] initWithFrame:[[self view] bounds]];
 
 	
-    [[self view] addSubview:sv];
-	[sv release];
+    [[self view] addSubview:scrollView];
 }
 
+
+- (void)viewDidLoad
+{
+// a work-around, otherwise the view does not scroll until it is zoomed
+	[self.scrollView setZoomScale:1.0 animated:NO];
+/*
+The bug appears when contentOffset is between roughly 2700 and 5900 when the screen is tapped.  (Tapping causes the
+zoomScale to be set to 0.5.)
+To put the initial contentOffset at a spot where the bug appears, set it to 4000.
+To put the initial contentOffset at a spot where the bug does NOT appear, set it to 0.
+*/
+	const float offset(4000);
+	self.scrollView.contentOffset = CGPointMake(0.0, offset);
+	UIGestureRecognizer *recognizer;
+	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapFrom:)];
+	[scrollView addGestureRecognizer:recognizer];
+	recognizer.delaysTouchesBegan = YES;
+	[recognizer release];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -77,6 +96,7 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
+
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
@@ -85,6 +105,41 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Responding to gestures
+
+- (void)handleTapFrom:(UIPinchGestureRecognizer *)recognizer 
+{
+	[self zoomOut];
+}
+
+
+-(void)zoomOut
+{
+	NSLog(@"zoomOut begin offset.y=%f", self.scrollView.contentOffset.y);
+	self.scrollView.bounces=NO;
+// The following line works correctly no matter the contentOffset, but I can't use it because I need
+// to chain animations.
+//	[self.scrollView setZoomScale:0.5 animated:YES];
+
+
+/*************************************
+This is where the bug appears
+**************************************/
+    [UIView animateWithDuration:4.0
+        animations:^
+		{
+			self.scrollView.zoomScale = 0.5;
+		}
+        completion:^(BOOL finished)
+		{
+			NSLog(@"zoomOut end offset.y=%f", self.scrollView.contentOffset.y);
+//			[self.scrollView scrollViewDidEndZoomingOut:TRUE];
+		}
+	];
+
 }
 
 @end

@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* ZoomingPDFViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ZoomingPDFViewerViewController.m */; };
+		43F9F9F21413EE8B002A8CBB /* README in Resources */ = {isa = PBXBuildFile; fileRef = 43F9F9F01413EE8B002A8CBB /* README */; };
+		43F9F9F31413EE8B002A8CBB /* whoiam 5 24 cropped 3-2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43F9F9F11413EE8B002A8CBB /* whoiam 5 24 cropped 3-2.pdf */; };
 		AF2ADF92121C7BED00F01FCC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2ADF8E121C7BED00F01FCC /* MainWindow.xib */; };
 		AF2ADF93121C7BED00F01FCC /* ZoomingPDFViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2ADF90121C7BED00F01FCC /* ZoomingPDFViewerViewController.xib */; };
 		AF9862F01219FFA700843786 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9862E91219FFA700843786 /* Icon-72.png */; };
@@ -25,7 +27,6 @@
 		AFE29EA212079441003183E7 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE29EA112079441003183E7 /* TiledPDFView.m */; };
 		AFE29EAC12079822003183E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE29EAB12079822003183E7 /* QuartzCore.framework */; };
 		AFE29EE412079C5C003183E7 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE29EE312079C5C003183E7 /* PDFScrollView.m */; };
-		AFE29EEE12079E88003183E7 /* TestPage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AFE29EED12079E88003183E7 /* TestPage.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		28D7ACF70DDB3853001CB0EB /* ZoomingPDFViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomingPDFViewerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ZoomingPDFViewer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomingPDFViewer_Prefix.pch; sourceTree = "<group>"; };
+		43F9F9F01413EE8B002A8CBB /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		43F9F9F11413EE8B002A8CBB /* whoiam 5 24 cropped 3-2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "whoiam 5 24 cropped 3-2.pdf"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ZoomingPDFViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ZoomingPDFViewer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AF2ADF8F121C7BED00F01FCC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		AF2ADF91121C7BED00F01FCC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZoomingPDFViewerViewController.xib; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		AFE29EAB12079822003183E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AFE29EE212079C5C003183E7 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
 		AFE29EE312079C5C003183E7 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
-		AFE29EED12079E88003183E7 /* TestPage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TestPage.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				43F9F9F01413EE8B002A8CBB /* README */,
+				43F9F9F11413EE8B002A8CBB /* whoiam 5 24 cropped 3-2.pdf */,
 				AF9862E91219FFA700843786 /* Icon-72.png */,
 				AF9862EA1219FFA700843786 /* Icon-Small-50.png */,
 				AF9862EB1219FFA700843786 /* Icon-Small.png */,
@@ -126,7 +130,6 @@
 				AF9862ED1219FFA700843786 /* Icon.png */,
 				AF9862EE1219FFA700843786 /* Icon@2x.png */,
 				AF9862EF1219FFA700843786 /* iTunesArtwork */,
-				AFE29EED12079E88003183E7 /* TestPage.pdf */,
 				8D1107310486CEB800E47090 /* ZoomingPDFViewer-Info.plist */,
 				AF2ADF8E121C7BED00F01FCC /* MainWindow.xib */,
 				AF2ADF90121C7BED00F01FCC /* ZoomingPDFViewerViewController.xib */,
@@ -172,6 +175,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ZoomingPDFViewer" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -194,7 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE29EEE12079E88003183E7 /* TestPage.pdf in Resources */,
 				AF9862F01219FFA700843786 /* Icon-72.png in Resources */,
 				AF9862F11219FFA700843786 /* Icon-Small-50.png in Resources */,
 				AF9862F21219FFA700843786 /* Icon-Small.png in Resources */,
@@ -204,6 +207,8 @@
 				AF9862F61219FFA700843786 /* iTunesArtwork in Resources */,
 				AF2ADF92121C7BED00F01FCC /* MainWindow.xib in Resources */,
 				AF2ADF93121C7BED00F01FCC /* ZoomingPDFViewerViewController.xib in Resources */,
+				43F9F9F21413EE8B002A8CBB /* README in Resources */,
+				43F9F9F31413EE8B002A8CBB /* whoiam 5 24 cropped 3-2.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,12 +256,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ZoomingPDFViewer_Prefix.pch;
 				INFOPLIST_FILE = "ZoomingPDFViewer-Info.plist";
 				PRODUCT_NAME = ZoomingPDFViewer;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -265,10 +272,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ZoomingPDFViewer_Prefix.pch;
 				INFOPLIST_FILE = "ZoomingPDFViewer-Info.plist";
 				PRODUCT_NAME = ZoomingPDFViewer;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

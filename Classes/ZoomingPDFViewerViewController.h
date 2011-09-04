@@ -47,10 +47,15 @@
 #import <UIKit/UIKit.h>
 
 @class TiledPDFView;
+@class PDFScrollView;
 
 @interface ZoomingPDFViewerViewController : UIViewController <UIScrollViewDelegate> {
+    PDFScrollView *scrollView;
 
 }
+@property (nonatomic, retain) PDFScrollView *scrollView;
+
+- (void)zoomOut;
 
 @end
 

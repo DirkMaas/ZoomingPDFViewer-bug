@@ -65,7 +65,7 @@
 		self.minimumZoomScale = .25;
 		
 		// Open the PDF document
-		NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"TestPage.pdf" withExtension:nil];
+		NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"whoiam 5 24 cropped 3-2.pdf" withExtension:nil];
 		pdf = CGPDFDocumentCreateWithURL((CFURLRef)pdfURL);
 		
 		// Get the PDF Page that we will be drawing
@@ -173,7 +173,7 @@
 {
     return pdfView;
 }
-
+/*
 // A UIScrollView delegate callback, called when the user stops zooming.  When the user stops zooming
 // we create a new TiledPDFView based on the new zoom level and draw it on top of the old TiledPDFView.
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
@@ -206,5 +206,5 @@
 	oldPDFView = pdfView;
 	[self addSubview:oldPDFView];
 }
-
+*/
 @end
